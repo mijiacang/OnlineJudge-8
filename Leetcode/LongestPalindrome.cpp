@@ -35,10 +35,10 @@ int Solution::longestPalindrome(string &s) {
             ret = ret + *it;
         }
         else if(*it != 0) {
-			ret = ret + ((*it) - 1);
+	    ret = ret + ((*it) - 1);
             odd = 1;
         }
-		else {}
+	else {}
     }
 
     return ret + odd;
