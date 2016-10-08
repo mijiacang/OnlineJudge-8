@@ -19,10 +19,10 @@ struct TreeNode {
 
 class Solution {
 public:
-    int sumOfLeftLeaves(TreeNode* root);
+	int sumOfLeftLeaves(TreeNode* root);
 	void recurFuc(TreeNode* root);
 private:
-	vector<int> vecNum;
+    	vector<int> vecNum;
 };
 
 int Solution::sumOfLeftLeaves(TreeNode* root) {
