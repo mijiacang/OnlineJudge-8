@@ -1,2 +1,2 @@
 # OnlineJudge
-For my job searching.
+These exercises are for my job searching.
