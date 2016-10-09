@@ -5,6 +5,7 @@
     > Created Time: Saturday, October 08, 2016 PM08:26:25 CST
  ************************************************************************/
 /* 缺点是可以用一个sum完成任务，却用了一个vector并进行了一次遍历。改进方式是在sumOfLeftLeaves函数里加一个sum，recurFuc函数里多加一个sum参数。*/
+
 #include <iostream>
 #include <vector>
 using namespace std;
