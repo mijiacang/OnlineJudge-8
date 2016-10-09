@@ -53,11 +53,10 @@ string Solution::addStrings(string num1, string num2)
 		return ret;
     }
     else {
-        if(head.empty())
-	    {
-		ret = "1" + ret;
-		return ret;
-	    }
+        if(head.empty()) {
+	    ret = "1" + ret;
+	    return ret;
+	}
 		
 	int i = head.length() - 1;
         while(flag == 1)
