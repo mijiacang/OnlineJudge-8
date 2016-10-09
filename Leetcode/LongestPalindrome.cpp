@@ -4,6 +4,7 @@
 	> Mail: 578072836@qq.com
 	> Created Time: Saturday, October 08, 2016 PM09:29:57 CST
  ************************************************************************/
+/* 可以用unorderedmap 代替 vector， 代码量会变少，但是执行时间会变长。 */
 
 #include <iostream>
 #include <vector>
