@@ -89,3 +89,28 @@ string Solution::addStrings(string num1, string num2)
     ret = head + ret;
     return ret;
 }
+
+
+
+/* 这是我目前所见到的最好的方法 */
+/*
+class Solution {
+public:
+string addStrings(string num1, string num2) {
+    int n1 = num1.size(), i = n1 - 1;
+    int n2 = num2.size(), j = n2 - 1;
+    int carry = 0;
+    string res = "";
+    while(i>=0 || j>=0 || carry){
+        long sum = 0;
+        if(i >= 0){sum += (num1[i] - '0');i--;}
+        if(j >= 0){sum += (num2[j] - '0');j--;}
+        sum += carry; 
+        carry = sum / 10;
+        sum = sum % 10;
+        res = to_string(sum) + res;
+    }
+    return res;
+}
+};
+*/
