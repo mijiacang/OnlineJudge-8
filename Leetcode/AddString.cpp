@@ -54,34 +54,35 @@ string Solution::addStrings(string num1, string num2)
     }
     else {
         if(head.empty()) {
-	    ret = "1" + ret;
-	    return ret;
-	}
+            ret = "1" + ret;
+            return ret;
+        }
 		
-	int i = head.length() - 1;
+        int i = head.length() - 1;
         while(flag == 1)
         {
             if(i == 0) {
-		if(head[0] == '9') {
-	       	    head[0] = '0';
-		    head = "1" + head;
-		}
-		else {
-		    head[0] = char(head[0] + 1);
-		}
+                if(head[0] == '9') {
+                    head[0] = '0';
+                    head = "1" + head;
+                }
+                else {
+                    head[0] = char(head[0] + 1);
+                }
                 flag = 0;
             }
+
             else {
-		head[i] = (char)(head[i] + 1);
-		if(head[i] > '9') {
-		    head[i] = char(head[i] - 10);
-		    flag = 1;
-		    i--;
-		}
-		else {
-		    flag = 0;
-		}
-	    }
+                head[i] = (char)(head[i] + 1);
+                    if(head[i] > '9') {
+                        head[i] = char(head[i] - 10);
+                        flag = 1;
+                        i--;
+                    }
+                    else {
+                        flag = 0;
+                    }
+            }
         }
     }
 
