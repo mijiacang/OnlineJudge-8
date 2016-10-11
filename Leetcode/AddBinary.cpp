@@ -4,7 +4,7 @@
 	> Mail: 578072836@qq.com
 	> Created Time: Tuesday, October 11, 2016 PM08:37:05 CST
  ************************************************************************/
-/* 比较简单 */
+/* 比较简单。 */
  
 #include <iostream>
 #include <string>
