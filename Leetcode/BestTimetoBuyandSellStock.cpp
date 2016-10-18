@@ -6,9 +6,12 @@
 	> Created Time: 星期一 10/17 23:13:17 2016
  ************************************************************************/
 /* 一开始超时，后来做了针对测试用例的修改，把首段和尾段的递减数列忽略。虽然通过了测试，但时间复杂度并没有变。 */
+/* 整个思路就错了，完全没必要两次遍历，一次就可以。以后要先想好算法在开始写代码！*/
 
 #include <iostream>
 #include <vector>
+#include <limits.h>
+#include <algorithm>
 using namespace std;
 
 class Solution {
@@ -16,6 +19,8 @@ public:
     int maxProfit(vector<int>& prices);
 };
 
+/* 修改前的代码，时间复杂度是O(n*n)。 */
+/*
 int Solution::maxProfit(vector<int>& prices)
 {
     int max = 0;
@@ -60,4 +65,25 @@ int Solution::maxProfit(vector<int>& prices)
         }
     }
     return max;
+}
+*/
+
+/* 修改后的代码,时间复杂度是O(n)。 */
+int Solution::maxProfit(vector<int>& prices)
+{
+    int minPrice = INT_MAX; // 遍历到的位置之前的最小价值
+    int maxPro = 0; // 遍历到的位置之前的最大收益
+
+    for(auto it = prices.begin(); it != prices.end(); it++)
+    {
+        if(*it < minPrice)
+        {
+            minPrice = *it;
+        }
+        else
+        {
+            maxPro = max(maxPro, (*it - minPrice));
+        }
+    }
+    return maxPro;
 }
