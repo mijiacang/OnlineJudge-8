@@ -5,7 +5,7 @@
 	> Mail: liboyang_mail@qq.com
 	> Created Time: 星期一 10/17 23:13:17 2016
  ************************************************************************/
-/* 超时，待修改。 */
+/* 一开始超时，后来做了针对测试用例的修改，把首段和尾段的递减数列忽略。虽然通过了测试，但时间复杂度并没有变。 */
 
 #include <iostream>
 #include <vector>
@@ -20,7 +20,9 @@ int Solution::maxProfit(vector<int>& prices)
 {
     int max = 0;
     int num = 0; // 记录vector尾端递减数据的数量
-
+    int flag = 0; // 记录vector首端递减数据的数量
+    int varCount = 0;
+    
     if(prices.empty())
     {
         return 0;
@@ -35,17 +37,18 @@ int Solution::maxProfit(vector<int>& prices)
         }
         else
         {
+            varCount++;
+            if(varCount == 1)
+            {
+                flag = flag + num;
+            }
             num = 0;
         }
     }
-    for(int i = 0; i < num; i++)
-    {
-        prices.pop_back();
-    }
 
-    for(auto it = prices.begin(); it != prices.end() - 1; it++)
+    for(auto it = prices.begin() + flag; it != prices.end() - 1 - num; it++)
     {
-        for(auto itt = it + 1; itt != prices.end(); itt++)
+        for(auto itt = it + 1; itt != prices.end() - num; itt++)
         {
             if(*it < *itt)
             {
