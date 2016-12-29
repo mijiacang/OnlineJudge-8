@@ -4,7 +4,7 @@
 	> Mail: 578072836@qq.com
 	> Created Time: Thu 29 Dec 2016 07:45:49 PM CST
  ************************************************************************/
-// 这道题没意思
+// 这道题没意思。。。
 #include <algorithm> // std::sort
 #include <vector> 
 #include <iostream>
