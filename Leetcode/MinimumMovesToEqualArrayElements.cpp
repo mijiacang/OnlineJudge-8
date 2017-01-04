@@ -4,6 +4,8 @@
 	> Mail: 578072836@qq.com
 	> Created Time: 三  1/ 4 20:39:35 2017
  ************************************************************************/
+//纯算法，代码实现很简单
+
 #include <vector>
 #include <iostream>
 using namespace std;
